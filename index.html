@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lugar Favorito Makeup - Tarjeta Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-base: #f3cbdc;
+            --gold-real: #c5a059;
+            --blue-patch: #a8d5d5;
+            --purple-patch: #d8b4d8;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .card {
+            background-color: var(--pink-base);
+            /* FONTO CON DIBUJOS DE MAQUILLAJE EXTRAÍDOS */
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            width: 100%;
+            max-width: 400px;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            border: 5px solid white;
+        }
+
+        /* MANCHAS ORGÁNICAS DEL FONDO (Igual a la tarjeta física) */
+        .patch-blue {
+            position: absolute;
+            top: 0; left: 0;
+            width: 180px; height: 250px;
+            background: var(--blue-patch);
+            border-radius: 0 0 100% 0;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .patch-purple {
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 150px; height: 180px;
+            background: var(--purple-patch);
+            border-radius: 100% 0 0 0;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        /* LOGO: EXTRACCIÓN REAL */
+        .header-logo {
+            position: relative;
+            padding: 50px 20px 30px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .mi-lugar {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--gold-real);
+            letter-spacing: 3px;
+            margin-bottom: -15px;
+            display: block;
+        }
+
+        .favorito {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 3px 3px 0px var(--gold-real), 5px 5px 15px rgba(0,0,0,0.2);
+            margin: 0;
+            position: relative;
+        }
+
+        .favorito::after {
+            content: "💋"; /* El beso sobre la o */
+            position: absolute;
+            font-size: 1.5rem;
+            bottom: 25px;
+            right: 20px;
+        }
+
+        .makeup-text {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--gold-real);
+            letter-spacing: 5px;
+            margin-top: -10px;
+            display: block;
+        }
+
+        /* INFO DE CONTACTO */
+        .contact-box {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            margin: 0 30px 20px;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .contact-row i { margin-right: 12px; color: var(--gold-real); font-size: 1rem; }
+
+        .slogan {
+            font-style: italic;
+            font-weight: 700;
+            color: #444;
+            padding: 0 20px;
+            margin-bottom: 25px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* BOTONES INTERACTIVOS */
+        .grid-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 0 30px 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-ws { background: #25D366; }
+        .btn-ig { background: #E1306C; }
+        .btn-fb { background: #4267B2; }
+        .btn-tel { background: #007bff; }
+        .btn-map { background: #6c757d; grid-column: span 2; }
+
+        .siste-badge {
+            background: white;
+            border: 2px solid #28a745;
+            color: #28a745;
+            margin: 10px 30px 30px;
+            padding: 10px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .footer-dev {
+            background: #fff;
+            padding: 20px;
+            font-size: 0.7rem;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="patch-blue"></div>
+    <div class="patch-purple"></div>
+
+    <div class="header-logo">
+        <span class="mi-lugar">MI LUGAR</span>
+        <h1 class="favorito">Favorito</h1>
+        <span class="makeup-text">MAKEUP</span>
+    </div>
+
+    <div class="contact-box">
+        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Éxito, Caucasia</div>
+        <div class="contact-row"><i class="fas fa-mobile-alt"></i> 314 778 7969</div>
+        <div class="contact-row"><i class="fas fa-award"></i> Ruby Rose | TRENDY | Ani-K</div>
+    </div>
+
+    <div class="slogan">"Resaltando tu belleza con estilo y pasión"</div>
+
+    <div class="grid-links">
+        <a href="https://wa.me/573147787969" class="btn-link btn-ws"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+        <a href="tel:+573147787969" class="btn-link btn-tel"><i class="fas fa-phone"></i> LLAMAR</a>
+        <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook"></i> FACEBOOK</a>
+        <a href="#" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA</a>
+    </div>
+
+    <div class="siste-badge">✓ CUPO SISTECRÉDITO DISPONIBLE</div>
+
+    <div class="footer-dev">
+        Generado: <span id="time-co"></span><br>
+        <strong>App desarrollada por Vibras Positivas (3117700431)</strong><br>
+        © Derechos de Autor 2026
+    </div>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const config = { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('time-co').innerHTML = now.toLocaleString('es-CO', config);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Lógica de suscripción invisible (GitHub Ready)
+    const expiry = new Date(2027, 2, 14);
+    if (new Date() > expiry) {
+        document.body.innerHTML = "<div style='color:white;text-align:center;padding:100px;'><h2>Servicio Suspendido</h2><p>Contacte a su proveedor de Vibras Positivas.</p></div>";
+    }
+</script>
+
+</body>
+</html>
