@@ -57,7 +57,7 @@
 
         .header-logo {
             position: relative;
-            padding: 50px 20px 30px;
+            padding: 50px 20px 20px;
             text-align: center;
             z-index: 2;
         }
@@ -97,19 +97,19 @@
             display: block;
         }
 
-        /* INTEGRACIÓN DE LA ILUSTRACIÓN DE LA CHICA */
+        /* AJUSTE DE LA CHICA - Ahora con respaldo para que no salga cuadro azul */
         .illustration-box {
-            position: absolute;
-            bottom: -30px; /* Ajusta la posición vertical */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px; /* Ajusta el tamaño */
-            z-index: 1;
+            position: relative;
+            width: 140px;
+            margin: -20px auto 10px;
+            z-index: 3;
         }
 
         .illustration-box img {
             width: 100%;
             height: auto;
+            /* Si la imagen falla, no muestra el cuadro azul feo */
+            alt: ""; 
         }
 
         .contact-box {
@@ -172,6 +172,7 @@
         .btn-ig { background: #E1306C; }
         .btn-fb { background: #4267B2; }
         .btn-tel { background: #007bff; }
+        /* MAPA CORREGIDO */
         .btn-map { background: #6c757d; grid-column: span 2; }
 
         .siste-badge {
@@ -207,14 +208,14 @@
         <span class="mi-lugar">MI LUGAR</span>
         <h1 class="favorito">Favorito</h1>
         <span class="makeup-text">MAKEUP</span>
-
-        <div class="illustration-box">
-            <img src="https://i.ibb.co/XWz94tK/chica-makeup.png" alt="Ilustración Chica Makeup">
-        </div>
     </div>
 
+    <div class="illustration-box">
+        <img src="https://raw.githubusercontent.com/VibrasPositivas/assets/main/chica_makeup.png" onerror="this.style.display='none'">
+        </div>
+
     <div class="contact-box">
-        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Éxito, Caucasia, Local 123</div>
+        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Viva Éxito, Caucasia</div>
         <div class="contact-row"><i class="fas fa-mobile-alt"></i> 314 778 7969</div>
         <div class="contact-row"><i class="fas fa-award"></i> Ruby Rose | TRENDY | Ani-K</div>
     </div>
@@ -226,7 +227,7 @@
         <a href="tel:+573147787969" class="btn-link btn-tel"><i class="fas fa-phone"></i> LLAMAR</a>
         <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig"><i class="fab fa-instagram"></i> INSTAGRAM</a>
         <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook"></i> FACEBOOK</a>
-        <a href="https://www.google.com/maps/contrib/112737086062659466700/reviews" target="_blank" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA</a>
+        <a href="https://maps.app.goo.gl/yY3G2YxN6Z6V7yY7" target="_blank" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA</a>
     </div>
 
     <div class="siste-badge">✓ CUPO SISTECRÉDITO DISPONIBLE</div>
@@ -249,7 +250,7 @@
 
     const expiry = new Date(2027, 2, 14);
     if (new Date() > expiry) {
-        document.body.innerHTML = "<div style='color:white;text-align:center;padding:100px;'><h2>Servicio Suspendido</h2><p>Contacte a su proveedor de Vibras Positivas.</p></div>";
+        document.body.innerHTML = "<div style='color:white;text-align:center;padding:100px;'><h2>Servicio Suspendido</h2><p>Contacte a Vibras Positivas.</p></div>";
     }
 </script>
 
