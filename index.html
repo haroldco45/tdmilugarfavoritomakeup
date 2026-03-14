@@ -5,105 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Lugar Favorito Makeup - Tarjeta Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --pink-base: #f3cbdc;
             --gold-real: #c5a059;
             --blue-patch: #a8d5d5;
             --purple-patch: #d8b4d8;
+            --dark-text: #2d2d2d;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #121212;
+            background-color: #1a1a1a;
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 15px;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
+        /* Contenedor Principal Responsive */
         .card {
             background-color: var(--pink-base);
             background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
             width: 100%;
-            max-width: 400px;
-            border-radius: 40px;
+            max-width: 450px;
+            border-radius: 50px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            border: 5px solid white;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            border: 6px solid #ffffff;
+            transition: transform 0.3s ease;
         }
 
+        /* Decoración de fondo */
         .patch-blue {
             position: absolute;
-            top: 0; left: 0;
-            width: 180px; height: 250px;
+            top: -20px; left: -20px;
+            width: 220px; height: 220px;
             background: var(--blue-patch);
-            border-radius: 0 0 100% 0;
-            opacity: 0.7;
+            border-radius: 50%;
+            opacity: 0.6;
             z-index: 0;
+            filter: blur(20px);
         }
 
         .patch-purple {
             position: absolute;
-            bottom: 0; right: 0;
-            width: 150px; height: 180px;
+            bottom: -30px; right: -30px;
+            width: 200px; height: 200px;
             background: var(--purple-patch);
-            border-radius: 100% 0 0 0;
-            opacity: 0.6;
+            border-radius: 50%;
+            opacity: 0.5;
             z-index: 0;
+            filter: blur(20px);
         }
 
+        /* Header y Logo */
         .header-logo {
             position: relative;
-            padding: 70px 20px 40px; /* Incrementado el padding inferior */
+            padding: 60px 20px 30px;
             text-align: center;
             z-index: 2;
         }
 
         .mi-lugar {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: var(--gold-real);
-            letter-spacing: 4px;
-            margin-bottom: -15px;
+            letter-spacing: 5px;
             display: block;
+            margin-bottom: -10px;
         }
 
         .favorito {
             font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
+            font-size: 5.5rem;
             color: white;
-            text-shadow: 2px 2px 0px var(--gold-real), 4px 4px 10px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 0px var(--gold-real), 5px 5px 15px rgba(0,0,0,0.1);
             margin: 0;
-            position: relative;
-        }
-
-        .favorito::after {
-            content: "💋";
-            position: absolute;
-            font-size: 1.6rem;
-            bottom: 25px;
-            right: 15px;
+            line-height: 0.9;
         }
 
         .makeup-text {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--gold-real);
-            letter-spacing: 6px;
-            margin-top: -10px;
+            letter-spacing: 8px;
             display: block;
+            margin-top: 5px;
         }
 
+        /* Caja de Contacto Interactiva */
         .contact-box {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(8px);
-            margin: 0 30px 25px; /* Reducido el margen superior */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            margin: 0 25px 20px;
             padding: 20px;
-            border-radius: 20px;
-            border: 1px solid white;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.5);
             z-index: 2;
             position: relative;
         }
@@ -111,31 +116,27 @@
         .contact-row {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #333;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--dark-text);
             font-weight: 700;
+            text-decoration: none;
         }
 
-        .contact-row i { margin-right: 12px; color: var(--gold-real); width: 18px; }
-
-        .slogan {
-            font-style: italic;
-            font-weight: 700;
-            color: #444;
-            padding: 0 30px;
-            margin-bottom: 25px;
-            z-index: 2;
-            position: relative;
+        .contact-row i {
+            margin-right: 15px;
+            color: var(--gold-real);
+            width: 20px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
+        /* Botones de Acción */
         .grid-links {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            padding: 0 30px 25px;
+            padding: 0 25px 20px;
             z-index: 2;
             position: relative;
         }
@@ -143,51 +144,75 @@
         .btn-link {
             text-decoration: none;
             color: white;
-            padding: 14px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 18px;
             font-weight: 800;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            gap: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
         }
 
+        .btn-link:active { transform: scale(0.95); }
+
         .btn-ws { background: #25D366; }
-        .btn-ig { background: #E1306C; }
-        .btn-fb { background: #4267B2; }
+        .btn-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .btn-fb { background: #1877F2; }
         .btn-tel { background: #007bff; }
-        .btn-map { background: #6c757d; grid-column: span 2; font-size: 0.85rem; }
+        .btn-map { 
+            background: #444; 
+            grid-column: span 2; 
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
 
         .siste-badge {
-            background: white;
+            background: #ffffff;
             border: 2px solid #28a745;
             color: #28a745;
-            margin: 0 30px 30px;
-            padding: 10px;
+            margin: 0 25px 25px;
+            padding: 12px;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             z-index: 2;
             position: relative;
             text-align: center;
+            animation: pulse 2s infinite;
         }
 
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Footer con Control de Tiempo y Créditos */
         .footer-dev {
-            background: #fff;
-            padding: 20px;
+            background: #ffffff;
+            padding: 25px 20px;
             font-size: 0.75rem;
-            color: #888;
+            color: #666;
             text-align: center;
             border-top: 1px solid #eee;
+        }
+
+        #time-co { color: var(--gold-real); font-weight: 700; }
+
+        /* Estilo para pantallas muy pequeñas */
+        @media (max-width: 360px) {
+            .favorito { font-size: 4rem; }
+            .grid-links { grid-template-columns: 1fr; }
+            .btn-map { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-<div class="card">
+<div class="card" id="main-card">
     <div class="patch-blue"></div>
     <div class="patch-purple"></div>
 
@@ -198,44 +223,83 @@
     </div>
 
     <div class="contact-box">
-        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Viva Éxito, Caucasia</div>
-        <div class="contact-row"><i class="fas fa-mobile-alt"></i> 314 778 7969</div>
-        <div class="contact-row"><i class="fas fa-award"></i> Ruby Rose | TRENDY | Ani-K</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=CC+Viva+Caucasia" target="_blank" class="contact-row">
+            <i class="fas fa-map-marker-alt"></i> C.C. Viva Éxito, Caucasia
+        </a>
+        <a href="tel:+573147787969" class="contact-row">
+            <i class="fas fa-mobile-alt"></i> 314 778 7969
+        </a>
+        <div class="contact-row">
+            <i class="fas fa-magic"></i> Ruby Rose | TRENDY | Ani-K
+        </div>
     </div>
 
-    <div class="slogan">"Resaltando tu belleza con estilo y pasión"</div>
-
     <div class="grid-links">
-        <a href="https://wa.me/573147787969" class="btn-link btn-ws"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-        <a href="tel:+573147787969" class="btn-link btn-tel"><i class="fas fa-phone"></i> LLAMAR</a>
-        <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook"></i> FACEBOOK</a>
-        <a href="https://googleusercontent.com/maps/place/C.C. Viva Caucasia/@7.9863765,-75.1969695,17z" target="_blank" class="btn-link btn-map">
-            <i class="fas fa-directions"></i> VER MAPA TIENDA (VIVA ÉXITO)
+        <a href="https://wa.me/573147787969?text=Hola!%20Vengo%20de%20tu%20tarjeta%20digital" class="btn-link btn-ws">
+            <i class="fab fa-whatsapp"></i> WHATSAPP
+        </a>
+        <a href="tel:+573147787969" class="btn-link btn-tel">
+            <i class="fas fa-phone"></i> LLAMAR
+        </a>
+        <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig">
+            <i class="fab fa-instagram"></i> INSTAGRAM
+        </a>
+        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb">
+            <i class="fab fa-facebook"></i> FACEBOOK
+        </a>
+        
+        <a href="https://www.google.com/maps/search/?api=1&query=CC+Viva+Caucasia+Antioquia" target="_blank" class="btn-link btn-map">
+            <i class="fas fa-location-arrow"></i> ¿CÓMO LLEGAR? (GPS)
         </a>
     </div>
 
-    <div class="siste-badge">✓ CUPO SISTECRÉDITO DISPONIBLE</div>
+    <div class="siste-badge">✓ CRÉDITO SISTECRÉDITO DISPONIBLE</div>
 
     <div class="footer-dev">
-        Generado: <span id="time-co"></span><br>
+        <p>Fecha y Hora Colombia:</p>
+        <div id="time-co">Cargando hora...</div>
+        <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
         <strong>App desarrollada por Vibras Positivas (3117700431)</strong><br>
-        © Derechos de Autor 2026
+        © Todos los Derechos Reservados 2026
     </div>
 </div>
 
 <script>
+    // Reloj en tiempo real para Colombia
     function updateClock() {
         const now = new Date();
-        const config = { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        document.getElementById('time-co').innerHTML = now.toLocaleString('es-CO', config);
+        const options = { 
+            timeZone: 'America/Bogota', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit',
+            hour12: true 
+        };
+        document.getElementById('time-co').innerHTML = now.toLocaleString('es-CO', options);
     }
     setInterval(updateClock, 1000);
     updateClock();
 
-    const expiry = new Date(2027, 2, 14);
-    if (new Date() > expiry) {
-        document.body.innerHTML = "<div style='color:white;text-align:center;padding:100px;'><h2>Suscripción Expirada</h2><p>Contacte a Vibras Positivas.</p></div>";
+    // CONTROL INVISIBLE DE SUSCRIPCIÓN (Vencimiento)
+    // Fecha de vencimiento: 14 de Marzo de 2027
+    const expirationDate = new Date(2027, 2, 14); // Mes 2 es Marzo en JS
+    const today = new Date();
+
+    if (today > expirationDate) {
+        document.getElementById('main-card').innerHTML = `
+            <div style="padding: 100px 20px; text-align: center; background: white; color: #333;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ff4444;"></i>
+                <h2 style="margin-top:20px;">SERVICIO SUSPENDIDO</h2>
+                <p>La suscripción de esta tarjeta digital ha vencido.</p>
+                <p>Por favor, contacte al desarrollador:</p>
+                <a href="https://wa.me/573117700431" style="color: #25D366; font-weight:bold; text-decoration:none;">
+                   Vibras Positivas: 3117700431
+                </a>
+            </div>
+        `;
     }
 </script>
 
