@@ -57,23 +57,23 @@
 
         .header-logo {
             position: relative;
-            padding: 40px 20px 10px;
+            padding: 70px 20px 40px; /* Incrementado el padding inferior */
             text-align: center;
             z-index: 2;
         }
 
         .mi-lugar {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--gold-real);
-            letter-spacing: 3px;
-            margin-bottom: -10px;
+            letter-spacing: 4px;
+            margin-bottom: -15px;
             display: block;
         }
 
         .favorito {
             font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
+            font-size: 5rem;
             color: white;
             text-shadow: 2px 2px 0px var(--gold-real), 4px 4px 10px rgba(0,0,0,0.2);
             margin: 0;
@@ -83,39 +83,25 @@
         .favorito::after {
             content: "💋";
             position: absolute;
-            font-size: 1.5rem;
-            bottom: 20px;
+            font-size: 1.6rem;
+            bottom: 25px;
             right: 15px;
         }
 
         .makeup-text {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--gold-real);
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin-top: -10px;
             display: block;
-        }
-
-        .illustration-box {
-            position: relative;
-            width: 160px;
-            margin: -10px auto 15px;
-            z-index: 3;
-            text-align: center;
-        }
-
-        .illustration-box img {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
         }
 
         .contact-box {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(8px);
-            margin: 0 25px 20px;
-            padding: 15px;
+            margin: 0 30px 25px; /* Reducido el margen superior */
+            padding: 20px;
             border-radius: 20px;
             border: 1px solid white;
             z-index: 2;
@@ -125,31 +111,31 @@
         .contact-row {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             color: #333;
             font-weight: 700;
         }
 
-        .contact-row i { margin-right: 10px; color: var(--gold-real); width: 15px; }
+        .contact-row i { margin-right: 12px; color: var(--gold-real); width: 18px; }
 
         .slogan {
             font-style: italic;
             font-weight: 700;
             color: #444;
-            padding: 0 25px;
-            margin-bottom: 20px;
+            padding: 0 30px;
+            margin-bottom: 25px;
             z-index: 2;
             position: relative;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .grid-links {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 0 25px 20px;
+            gap: 12px;
+            padding: 0 30px 25px;
             z-index: 2;
             position: relative;
         }
@@ -157,32 +143,33 @@
         .btn-link {
             text-decoration: none;
             color: white;
-            padding: 12px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 15px;
             font-weight: 800;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
         .btn-ws { background: #25D366; }
         .btn-ig { background: #E1306C; }
         .btn-fb { background: #4267B2; }
         .btn-tel { background: #007bff; }
-        .btn-map { background: #6c757d; grid-column: span 2; font-size: 0.8rem; }
+        .btn-map { background: #6c757d; grid-column: span 2; font-size: 0.85rem; }
 
         .siste-badge {
             background: white;
             border: 2px solid #28a745;
             color: #28a745;
-            margin: 0 25px 25px;
-            padding: 8px;
+            margin: 0 30px 30px;
+            padding: 10px;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             z-index: 2;
             position: relative;
             text-align: center;
@@ -190,10 +177,11 @@
 
         .footer-dev {
             background: #fff;
-            padding: 15px;
-            font-size: 0.65rem;
+            padding: 20px;
+            font-size: 0.75rem;
             color: #888;
             text-align: center;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
@@ -209,10 +197,6 @@
         <span class="makeup-text">MAKEUP</span>
     </div>
 
-    <div class="illustration-box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4CAYAAABv3z9RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA" alt="Mi Lugar Favorito" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3501/3501255.png'">
-        </div>
-
     <div class="contact-box">
         <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Viva Éxito, Caucasia</div>
         <div class="contact-row"><i class="fas fa-mobile-alt"></i> 314 778 7969</div>
@@ -225,8 +209,10 @@
         <a href="https://wa.me/573147787969" class="btn-link btn-ws"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         <a href="tel:+573147787969" class="btn-link btn-tel"><i class="fas fa-phone"></i> LLAMAR</a>
         <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook-f"></i> FACEBOOK</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Centro+Comercial+Viva+Caucasia+Exito" target="_blank" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA (VIVA ÉXITO)</a>
+        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook"></i> FACEBOOK</a>
+        <a href="https://googleusercontent.com/maps/place/C.C. Viva Caucasia/@7.9863765,-75.1969695,17z" target="_blank" class="btn-link btn-map">
+            <i class="fas fa-directions"></i> VER MAPA TIENDA (VIVA ÉXITO)
+        </a>
     </div>
 
     <div class="siste-badge">✓ CUPO SISTECRÉDITO DISPONIBLE</div>
