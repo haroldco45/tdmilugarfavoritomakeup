@@ -97,6 +97,21 @@
             display: block;
         }
 
+        /* INTEGRACIÓN DE LA ILUSTRACIÓN DE LA CHICA */
+        .illustration-box {
+            position: absolute;
+            bottom: -30px; /* Ajusta la posición vertical */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Ajusta el tamaño */
+            z-index: 1;
+        }
+
+        .illustration-box img {
+            width: 100%;
+            height: auto;
+        }
+
         .contact-box {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(8px);
@@ -192,10 +207,14 @@
         <span class="mi-lugar">MI LUGAR</span>
         <h1 class="favorito">Favorito</h1>
         <span class="makeup-text">MAKEUP</span>
+
+        <div class="illustration-box">
+            <img src="https://i.ibb.co/XWz94tK/chica-makeup.png" alt="Ilustración Chica Makeup">
+        </div>
     </div>
 
     <div class="contact-box">
-        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Viva Caucasia, Local 123</div>
+        <div class="contact-row"><i class="fas fa-map-marker-alt"></i> C.C. Éxito, Caucasia, Local 123</div>
         <div class="contact-row"><i class="fas fa-mobile-alt"></i> 314 778 7969</div>
         <div class="contact-row"><i class="fas fa-award"></i> Ruby Rose | TRENDY | Ani-K</div>
     </div>
@@ -206,8 +225,8 @@
         <a href="https://wa.me/573147787969" class="btn-link btn-ws"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         <a href="tel:+573147787969" class="btn-link btn-tel"><i class="fas fa-phone"></i> LLAMAR</a>
         <a href="https://instagram.com/milugarfavoritomakeup" class="btn-link btn-ig"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook-f"></i> FACEBOOK</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Centro+Comercial+Viva+Caucasia+Antioquia" target="_blank" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA</a>
+        <a href="https://facebook.com/milugarfavoritomakeup" class="btn-link btn-fb"><i class="fab fa-facebook"></i> FACEBOOK</a>
+        <a href="https://www.google.com/maps/contrib/112737086062659466700/reviews" target="_blank" class="btn-link btn-map"><i class="fas fa-directions"></i> VER MAPA TIENDA</a>
     </div>
 
     <div class="siste-badge">✓ CUPO SISTECRÉDITO DISPONIBLE</div>
